@@ -6,3 +6,5 @@ export type RegisterNewPasswordProp = {
 export type FormProp = {
   setRegisterClicked: React.Dispatch<React.SetStateAction<boolean>>;
 };
+
+export type ReactChangeInput = React.ChangeEvent<HTMLInputElement>;
