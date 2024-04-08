@@ -1,13 +1,13 @@
 import { RegisterNewPasswordProp } from '../types';
 
 function RegisterNewPassword(
-  { setRegisterClicked, registerClicked }: RegisterNewPasswordProp,
+  { SetRegisterClicked, RegisterClicked }: RegisterNewPasswordProp,
 ) {
   return (
-    !registerClicked && (
+    !RegisterClicked && (
       <button
         id="register"
-        onClick={ () => setRegisterClicked(true) }
+        onClick={ () => SetRegisterClicked(true) }
       >
         Cadastrar nova senha
       </button>

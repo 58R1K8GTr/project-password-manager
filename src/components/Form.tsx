@@ -1,39 +1,36 @@
-import { useState } from 'react';
 import { FormProp, ReactChangeInput } from '../types';
 
-function Form({ setRegisterClicked }: FormProp) {
-  const [dataState, setDataState] = useState({
-    serviceName: '',
-    login: '',
-    password: '',
-    url: '',
-  });
-
+function Form(
+  { SetRegisterClicked, SetDataState, DataState }: FormProp,
+) {
   const punctuation = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
-
   function areTheFieldsCorrect() {
     const errors = [
-      !dataState.serviceName,
-      !dataState.login,
-      dataState.password.length < 8,
-      dataState.password.length > 16,
-      !/[a-zA-Z]+/.test(dataState.password),
-      !/[\d]+/.test(dataState.password),
-      !dataState.password.split('').some((character) => punctuation.includes(character)),
+      !DataState.serviceName,
+      !DataState.login,
+      DataState.password.length < 8,
+      DataState.password.length > 16,
+      !/[a-zA-Z]+/.test(DataState.password),
+      !/[\d]+/.test(DataState.password),
+      !DataState.password.split('').some((character) => punctuation.includes(character)),
     ];
     return errors.some((error) => error);
   }
 
   function handleChange({ target }: ReactChangeInput) {
-    setDataState((oldState) => ({ ...oldState, [target.id]: target.value }));
+    SetDataState((oldState) => ({ ...oldState, [target.id]: target.value }));
+  }
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
   }
 
   return (
-    <form onSubmit={ (event) => event.preventDefault() }>
+    <form onSubmit={ handleSubmit }>
       <label htmlFor="serviceName">
         Nome do serviço
         <input
-          value={ dataState.serviceName }
+          value={ DataState.serviceName }
           onChange={ handleChange }
           type="text"
           id="serviceName"
@@ -42,7 +39,7 @@ function Form({ setRegisterClicked }: FormProp) {
       <label htmlFor="login">
         Login
         <input
-          value={ dataState.login }
+          value={ DataState.login }
           onChange={ handleChange }
           type="text"
           id="login"
@@ -51,7 +48,7 @@ function Form({ setRegisterClicked }: FormProp) {
       <label htmlFor="password">
         Senha
         <input
-          value={ dataState.password }
+          value={ DataState.password }
           onChange={ handleChange }
           type="password"
           name="password"
@@ -61,7 +58,7 @@ function Form({ setRegisterClicked }: FormProp) {
       <label htmlFor="url">
         URL
         <input
-          value={ dataState.url }
+          value={ DataState.url }
           onChange={ handleChange }
           type="text"
           id="url"
@@ -70,7 +67,7 @@ function Form({ setRegisterClicked }: FormProp) {
       <button disabled={ areTheFieldsCorrect() }>Cadastrar</button>
       <button
         id="cancel"
-        onClick={ () => setRegisterClicked(false) }
+        onClick={ () => SetRegisterClicked(false) }
       >
         Cancelar
       </button>
