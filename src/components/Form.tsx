@@ -1,6 +1,8 @@
-function Form() {
+import { FormProp } from '../types';
+
+function Form({ setRegisterClicked }: FormProp) {
   return (
-    <>
+    <form onSubmit={ (event) => event.preventDefault() }>
       <label htmlFor="serviceName">
         Nome do serviço
         <input type="text" id="serviceName" />
@@ -17,9 +19,14 @@ function Form() {
         URL
         <input type="text" id="url" />
       </label>
-      <button id="register">Cadastrar</button>
-      <button id="cancel">Cancelar</button>
-    </>
+      <button>Cadastrar</button>
+      <button
+        id="cancel"
+        onClick={ () => setRegisterClicked(false) }
+      >
+        Cancelar
+      </button>
+    </form>
   );
 }
 
