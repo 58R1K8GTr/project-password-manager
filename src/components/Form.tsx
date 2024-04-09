@@ -1,7 +1,12 @@
 import { FormProp, ReactChangeInput } from '../types';
 
 function Form(
-  { SetRegisterClicked, SetDataState, DataState }: FormProp,
+  {
+    SetRegisterClicked,
+    SetDataState,
+    DataState,
+    SetStoreData,
+  }: FormProp,
 ) {
   const punctuation = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
   function areTheFieldsCorrect() {
@@ -21,12 +26,13 @@ function Form(
     SetDataState((oldState) => ({ ...oldState, [target.id]: target.value }));
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  function handleRegister() {
+    SetStoreData((prevState) => [...prevState, DataState]);
+    SetRegisterClicked(false);
   }
 
   return (
-    <form onSubmit={ handleSubmit }>
+    <form onSubmit={ (event) => event.preventDefault() }>
       <label htmlFor="serviceName">
         Nome do serviço
         <input
@@ -64,7 +70,12 @@ function Form(
           id="url"
         />
       </label>
-      <button disabled={ areTheFieldsCorrect() }>Cadastrar</button>
+      <button
+        disabled={ areTheFieldsCorrect() }
+        onClick={ handleRegister }
+      >
+        Cadastrar
+      </button>
       <button
         id="cancel"
         onClick={ () => SetRegisterClicked(false) }

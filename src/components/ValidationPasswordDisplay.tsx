@@ -26,7 +26,7 @@ function ValidationPasswordDisplay({ DataState }: ValidationPasswordDisplayProp)
       {
         messages.map((error, index) => {
           return (
-            <span
+            <p
               key={ error }
               className={
                 errors[index]
@@ -35,7 +35,7 @@ function ValidationPasswordDisplay({ DataState }: ValidationPasswordDisplayProp)
               }
             >
               { error }
-            </span>
+            </p>
           );
         })
       }
