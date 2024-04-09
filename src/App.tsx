@@ -37,9 +37,12 @@ function App() {
         RegisterClicked={ registerClicked }
       />
       {
-        storeData.length === 0 && !registerClicked
-          ? <p>Nenhuma senha cadastrada</p>
-          : <ShowServices DataSet={ storeData } />
+        storeData.length === 0
+          ? <p>nenhuma senha cadastrada</p>
+          : <ShowServices
+              DataSet={ storeData }
+              SetStoreData={ setStoreData }
+          />
       }
     </>
   );

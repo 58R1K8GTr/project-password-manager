@@ -29,4 +29,5 @@ export type ValidationPasswordDisplayProp = {
 
 export type ShowServicesProp = {
   DataSet: DataState[];
+  SetStoreData: React.Dispatch<React.SetStateAction<DataState[]>>;
 };

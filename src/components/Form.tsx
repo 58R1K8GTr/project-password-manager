@@ -29,6 +29,12 @@ function Form(
   function handleRegister() {
     SetStoreData((prevState) => [...prevState, DataState]);
     SetRegisterClicked(false);
+    SetDataState({
+      serviceName: '',
+      login: '',
+      password: '',
+      url: '',
+    });
   }
 
   return (
