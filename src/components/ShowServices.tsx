@@ -1,4 +1,5 @@
 import { DataState, ShowServicesProp } from '../types';
+import Service from './Service';
 
 function ShowServices({ DataSet, SetStoreData }: ShowServicesProp) {
   function handleClick(index: number) {
@@ -8,19 +9,13 @@ function ShowServices({ DataSet, SetStoreData }: ShowServicesProp) {
   return (
     <>
       {DataSet.map((data, index) => {
-        const { serviceName, login, password, url } = data;
         return (
-          <div key={ login }>
-            <a href={ url }>{ serviceName }</a>
-            <p>{ login }</p>
-            <p>{ password }</p>
-            <button
-              data-testid="remove-btn"
-              onClick={ () => handleClick(index) }
-            >
-              Remover
-            </button>
-          </div>
+          <Service
+            key={ data.login }
+            Info={ {
+              ...data, index, handleClick,
+            } }
+          />
         );
       })}
     </>

@@ -31,3 +31,14 @@ export type ShowServicesProp = {
   DataSet: DataState[];
   SetStoreData: React.Dispatch<React.SetStateAction<DataState[]>>;
 };
+
+export type ServiceProp = {
+  Info: {
+    serviceName: string;
+    login: string;
+    password: string;
+    url: string;
+    index: number;
+    handleClick: (index: number) => void;
+  }
+};
