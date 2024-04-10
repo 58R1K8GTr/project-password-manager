@@ -4,11 +4,11 @@
 }
 
 .cancel-button {
-  padding: 0;
   background-color: rgb(31, 34, 44);
   border: none;
   border-radius: none;
   color: rgb(53, 144, 245);
+  padding: 0;
 }
 
 label {
@@ -17,20 +17,20 @@ label {
 }
 
 form input {
-  margin-left: 5px;
   border-radius: 5px;
-  padding: 10px;
   box-sizing: border-box;
-  width: 100%;
   flex-grow: 1;
+  margin-left: 5px;
+  padding: 10px;
+  width: 100%;
 }
 
 form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
   max-width: 500px;
+  padding: 20px;
 }
 
 .register-login {

@@ -1,13 +1,13 @@
 main {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid gray;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
   min-height: 600px;
   min-width: 1000px;
-  display: flex;
   padding: 30px;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -20,12 +20,12 @@ p {
 }
 
 .form-group {
-  display: flex;
   align-items: center;
-  justify-content: space-around;
-  border: 1px solid gray;
   background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid gray;
   border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .line {
