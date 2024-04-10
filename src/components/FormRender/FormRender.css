@@ -1,12 +1,12 @@
 main {
-  min-width: 1000px;
-  min-height: 600px;
-  border-radius: 10px;
   border: 1px solid gray;
-  padding: 30px;
+  border-radius: 10px;
+  min-height: 600px;
+  min-width: 1000px;
   display: flex;
-  flex-direction: column;
+  padding: 30px;
   align-items: center;
+  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -21,15 +21,15 @@ p {
 
 .form-group {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
   border: 1px solid gray;
-  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .line {
   border-bottom: 1px solid gray;
-  width: 100px;
   margin: 50px 0;
+  width: 100px;
 }
