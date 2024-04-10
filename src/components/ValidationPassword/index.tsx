@@ -1,4 +1,5 @@
-import { ValidationPasswordDisplayProp } from '../types';
+import { ValidationPasswordDisplayProp } from '../../types';
+import './ValidationPassword.css';
 
 function ValidationPasswordDisplay({ DataState }: ValidationPasswordDisplayProp) {
   const messages = [
@@ -22,7 +23,7 @@ function ValidationPasswordDisplay({ DataState }: ValidationPasswordDisplayProp)
   ];
 
   return (
-    <>
+    <div className="validations">
       {
         messages.map((error, index) => {
           return (
@@ -39,7 +40,7 @@ function ValidationPasswordDisplay({ DataState }: ValidationPasswordDisplayProp)
           );
         })
       }
-    </>
+    </div>
   );
 }
 

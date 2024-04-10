@@ -1,4 +1,5 @@
-import { RegisterNewPasswordProp } from '../types';
+import { RegisterNewPasswordProp } from '../../types';
+import './RegisterNewPassword.css';
 
 function RegisterNewPassword(
   { SetRegisterClicked, RegisterClicked }: RegisterNewPasswordProp,
@@ -6,6 +7,7 @@ function RegisterNewPassword(
   return (
     !RegisterClicked && (
       <button
+        className="blue"
         id="register"
         onClick={ () => SetRegisterClicked(true) }
       >

@@ -1,0 +1,35 @@
+main {
+  min-width: 1000px;
+  min-height: 600px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  color: white;
+  margin-bottom: 50px;
+}
+
+p {
+  color: grey;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.line {
+  border-bottom: 1px solid gray;
+  width: 100px;
+  margin: 50px 0;
+}

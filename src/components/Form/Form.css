@@ -1,0 +1,56 @@
+.blue {
+  background-color: rgb(53, 144, 245);
+  color: white;
+}
+
+.cancel-button {
+  padding: 0;
+  border-radius: none;
+  border: none;
+  background-color: rgb(31, 34, 44);
+  font: inherit;
+  color: rgb(53, 144, 245);
+  outline: inherit;
+}
+
+label {
+  color: white;
+  margin-right: 20px;
+}
+
+form input {
+  margin-left: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  max-width: 500px;
+}
+
+.register-login {
+  display: flex;
+  justify-content: space-around;
+}
+
+.register-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.square-button {
+  padding: 0;
+  border-radius: 10px;
+}
+
+.gray {
+  background-color: gray;
+}

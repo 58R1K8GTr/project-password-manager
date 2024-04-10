@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { ServiceProp } from '../types';
+import { ServiceProp } from '../../types';
+import './Service.css';
 
 function Service({ Info }: ServiceProp) {
   const {
@@ -17,7 +18,7 @@ function Service({ Info }: ServiceProp) {
   }
 
   return (
-    <div key={ login }>
+    <div className="service" key={ login }>
       <a href={ url }>{ serviceName }</a>
       <p>{ login }</p>
       <p>{ checked ? '******' : password }</p>
